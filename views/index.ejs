@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delhi High Court – Latest Judgments</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧑‍⚖️ Delhi High Court – Latest Judgments</h1>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (judgments && judgments.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Case Number</th>
+            <th>Date</th>
+            <th>Parties</th>
+            <th>PDF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% judgments.forEach((item, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= item.caseNo %></td>
+              <td><%= item.date %></td>
+              <td><%= item.parties %></td>
+              <td>
+                <% if (item.pdfLink) { %>
+                  <a href="<%= item.pdfLink %>" target="_blank">📄 View PDF</a>
+                <% } else { %>
+                  <span class="no-link">—</span>
+                <% } %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No judgments found.</p>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Judgments</title>
+</head>
+<body>
+  <h1>Latest Judgments (Delhi High Court)</h1>
+  <table border="1" width="100%">
+    <tr>
+      <th>Case No</th>
+      <th>Date</th>
+      <th>Parties</th>
+      <th>PDF</th>
+    </tr>
+    <% judgments.forEach(j => { %>
+      <tr>
+        <td><%= j.caseNo %></td>
+        <td><%= j.date %></td>
+        <td><%= j.parties %></td>
+        <td>
+          <% if (j.pdfLink) { %>
+            <a href="<%= j.pdfLink %>" target="_blank">Download</a>
+          <% } else { %>-<% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

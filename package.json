@@ -1,0 +1,23 @@
+{
+  "name": "dhc-dashboard",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "body-parser": "^2.2.0",
+    "cheerio": "^1.1.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "jsdom": "^26.1.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.15.0",
+    "sqlite3": "^5.1.7"
+  }
+}
